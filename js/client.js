@@ -22,7 +22,7 @@ $(function() {
     $('#btn-show-users').click(function() {
         console.log('btn-show-users clicked')
         $('#users-list-container').hide();
-        // $('#users-list-table tbody').remove();
+        $('#users-list-table tbody').remove();
         
         $.ajax({
             type : 'GET',
@@ -33,7 +33,7 @@ $(function() {
                 console.log('users list response', r);
                 if(r.users.length > 0) {
                     var tr;
-                    // var tbody = $('<tbody/>');
+                    var tbody = $('<tbody/>');
                     for (var i = 0; i < r.users.length; i++) {
                         console.log('user', r.users[i])
                         tr = $('<tr/>');
@@ -44,10 +44,10 @@ $(function() {
                         tr.append("<td>" + r.users[i].address + "</td>");
                         tr.append("<td>" + r.users[i].animal + "</td>");
                         tr.append('<td style="background-color:'+ r.users[i].colorHex+'">' + r.users[i].color + "</td>");
-                        // tbody.append(tr);
+                        tbody.append(tr);
                         $('#users-list-table').append(tr);
                     }
-                    // $('#users-list-table').append(tbody);
+                    $('#users-list-table').append(tbody);
                     $('#users-list-container').show();
                 }
             },
