@@ -37,13 +37,13 @@ $(function() {
                     for (var i = 0; i < r.users.length; i++) {
                         console.log('user', r.users[i])
                         tr = $('<tr/>');
-                        // tr.append("<td>" + r.users[i].id +"</td>");
+                        tr.append("<td>" + r.users[i].id +"</td>");
                         tr.append("<td>" + r.users[i].name + "</td>");
                         tr.append("<td>" + r.users[i].age + "</td>");
                         tr.append("<td>" + r.users[i].email + "</td>");
                         tr.append("<td>" + r.users[i].address + "</td>");
-                        // tr.append("<td>" + r.users[i].animal + "</td>");
-                        // tr.append('<td style="background-color:'+ r.users[i].colorHex+'">' + r.users[i].color + "</td>");
+                        tr.append("<td>" + r.users[i].animal + "</td>");
+                        tr.append('<td style="background-color:'+ r.users[i].colorHex+'">' + r.users[i].color + "</td>");
                         // tbody.append(tr);
                         $('#users-list-table').append(tr);
                     }
